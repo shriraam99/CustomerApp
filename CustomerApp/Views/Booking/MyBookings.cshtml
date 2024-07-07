@@ -1,0 +1,32 @@
+﻿@model IEnumerable<UserBooking>
+
+<h2>My Bookings</h2>
+
+@if (Model.Any())
+{
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th>Booking Date</th>
+                <th>Room No</th>
+                <th>Room Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var booking in Model)
+            {
+                <tr>
+                    <td>@booking.BookingDate.ToString("MM/dd/yyyy")</td>
+                    <td>@booking.RoomNo</td>
+                    <td>@booking.RoomType</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="alert alert-info" role="alert">
+        You have no bookings.
+    </div>
+}

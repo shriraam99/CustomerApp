@@ -1,0 +1,9 @@
+﻿@model BookingModel
+
+<h2>Booking Successful</h2>
+<p>Your booking has been successfully processed.</p>
+<p>Room Number: @ViewBag.RoomNo</p>
+<p>Room Type: @Model.RoomType</p>
+<p>Booking Dates: @Model.FromDate.ToShortDateString() - @Model.ToDate.ToShortDateString()</p>
+
+<a href="@Url.Action("Index", "Booking")">Book Another Room</a>

@@ -1,0 +1,21 @@
+﻿@model BookingModel
+
+<h2>Book a Room</h2>
+
+<form asp-action="BookRoom" method="post">
+    <label for="fromDate">From Date</label>
+    <input type="date" id="fromDate" name="FromDate" required />
+
+    <label for="toDate">To Date</label>
+    <input type="date" id="toDate" name="ToDate" required />
+
+    <label for="roomType">Room Type</label>
+    <select id="roomType" name="RoomType" required>
+        <option value="Single">Single</option>
+        <option value="Double">Double</option>
+    </select>
+
+    <button type="submit">Submit</button>
+</form>
+
+<a href="@Url.Action("MyBookings", "Booking")">My Bookings</a>
